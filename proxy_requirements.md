@@ -24,3 +24,5 @@ This file contains the details and specifications for implementing a proxy serve
 - implement a cache function to make sure we save the file we have
 
 
+
+- Go to server code now and implement a way for the server to handle a conditional get request.

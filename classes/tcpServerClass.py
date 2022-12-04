@@ -24,12 +24,13 @@ class Server:
         
             # Get the client request
             request = connectionSocket.recv(1024).decode()
+            print("THIS IS THE REQUEST")
             print(request)
 
             # Parse HTTP headers
             headers = request.split('\n')
             filename = headers[1].split()[0]
-            print(filename)
+
             if headers[0].split()[0] != 'GET' or headers[0].split()[2] != 'HTTP/1.1':
                 response = 'HTTP/1.1 400 BAD REQUEST\n\nBad Request'
 
@@ -40,6 +41,7 @@ class Server:
                 webpage = open('.' + filename)
                 content = webpage.read()
                 if content != prev_content:
+                    self.last_modified = datetime.now()
                     prev_content = content
                     webpage.close()
                     response = 'HTTP/1.1 200 OK\n\n' + content 
