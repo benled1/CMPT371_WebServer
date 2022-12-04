@@ -1,9 +1,11 @@
 from socket import *
+from datetime import datetime
 class Server:
     
     def __init__(self, port: int):
         self.port = port
         self.socket = None
+        self.last_modified = datetime.strptime('2022-12-01 10:27:03.929149', '%Y-%m-%d %H:%M:%S.%f')
 
     def init_socket(self):
         # Create server socket
