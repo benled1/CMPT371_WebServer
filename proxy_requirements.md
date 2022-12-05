@@ -33,3 +33,17 @@ python tcpClient.py
 8. Now still with both servers still running, make a third request using the same command. This request should returned the newly changed contents. 
 9. Check the test.html in the proxycache and verify that it is the newly changed version of the test.html.
 10. If all of these tests checkout, then the proxy server satisfies the requirements outlined above.
+
+
+# ScreenShots of the Output
+
+The below screenshots are the results of running a simple client side request to the proxy server for the test.html, the proxy server did not have it cached at the time of the request.
+
+## Client Side Output
+<img src="./imgs/clientside_output.png">
+
+## Server Side Output
+<img src="./imgs/serverside_output.png">
+
+## Proxy Output
+<img src="./imgs/proxy_output.png">
